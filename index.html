@@ -71,7 +71,7 @@
   <form class="setup-wizard-form"
         method="post"
         enctype="multipart/form-data"
-        action="https://js.dump.academy/code-and-magick"
+        action="https://javascript.pages.academy/code-and-magick"
         autocomplete="off">
 
     <div class="setup-title">
@@ -82,7 +82,7 @@
         </div>
         <label>
           <input type="text" name="username"
-          minlength="2" maxlength="25" required
+                 minlength="2" maxlength="25" required
                  class="setup-user-name" value="Синий Пендальф"/>
         </label>
       </div>
@@ -182,24 +182,24 @@
   </div>
 </template>
 <script>
-var fireballSize=22;
-function getFireballSpeed (isHeadWind) {
-  if (!isHeadWind) {
+  var fireballSize=22;
+  function getFireballSpeed (isHeadWind) {
+    if (!isHeadWind) {
       return 5;
     }
     return 2;
-};
-var wizardSpeed=3;
-var wizardWidth=70;
-function getWizardHeight (wizardWidth) {
-  return wizardWidth*1.337;
-}
-function getWizardX (gameFieldWidth) {
-     return (gameFieldWidth - wizardWidth) / 2;
-   }
+  };
+  var wizardSpeed=3;
+  var wizardWidth=70;
+  function getWizardHeight (wizardWidth) {
+    return wizardWidth*1.337;
+  }
+  function getWizardX (gameFieldWidth) {
+    return (gameFieldWidth - wizardWidth) / 2;
+  }
 
-   function getWizardY (gameFieldHeight) {
-     return gameFieldHeight / 3;}
+  function getWizardY (gameFieldHeight) {
+    return gameFieldHeight / 3;}
 
 </script>
 <script src="js/setup.js"></script>
