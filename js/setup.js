@@ -4,8 +4,8 @@
   // userDialog.classList.remove('hidden');
   var similarListElement = userDialog.querySelector('.setup-similar-list');
   var similarWizardTemplate = document.querySelector('#similar-wizard-template')
-  .content
-  .querySelector('.setup-similar-item');
+    .content
+    .querySelector('.setup-similar-item');
   var nameRandom = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
   var surnameRandom = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвингн'];
   var coatColorRandom = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
@@ -14,8 +14,6 @@
   // Дом задание 4 лекция переменные
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = userDialog.querySelector('.setup-close');
-  var MIN_NAME_LENGTH = 2;
-  var MAX_NAME_LENGTH = 25;
   var userNameInput = document.querySelector('.setup-user-name');
   var setupPlayer = userDialog.querySelector('.setup-player');
   var wizardCoat = setupPlayer.querySelector('.setup-wizard .wizard-coat');
@@ -71,34 +69,12 @@
     }
   });
 
-  setupClose.addEventListener('click', function () {
+  setupClose.addEventListener('click', function (evt) {
+    evt.preventDefault();
     closePopup();
   });
 
 
-  // Валидация введенного значения по демо
-
-  userNameInput.addEventListener('invalid', function () {
-    if (userNameInput.validity.valueMissing) {
-      userNameInput.setCustomValidity('Обязательное поле');
-    } else {
-      userNameInput.setCustomValidity('');
-    }
-  });
-
-  userNameInput.addEventListener('input', function () {
-    var valueLength = userNameInput.value.length;
-
-    if (valueLength < MIN_NAME_LENGTH) {
-      userNameInput.setCustomValidity('Ещё ' + (MIN_NAME_LENGTH - valueLength) + ' симв.');
-    } else if (valueLength > MAX_NAME_LENGTH) {
-      userNameInput.setCustomValidity('Удалите лишние ' + (valueLength - MAX_NAME_LENGTH) + ' симв.');
-    } else {
-      userNameInput.setCustomValidity('');
-    }
-  });
-  // конец задания лекция 4
-  // задание 3 лекция вроде
   var getArrRandomIndex = function (arr) {
     return Math.floor((Math.random() * arr.length) + 0);
   };
